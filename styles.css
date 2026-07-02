@@ -1,0 +1,609 @@
+
+
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif; /* Cleaner, more modern font rendering */
+        background: #0d0d0d; /* Slightly deeper, richer pitch black */
+        color: #e5e5e5;
+        overflow-x: hidden;
+    }   
+
+    header {
+        text-align: center;
+        padding: 45px 20px;
+        background: radial-gradient(circle at center, #1f1f1f 0%, #0d0d0d 100%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ffffff 30%, #ffd700 100%);
+    
+    -webkit-background-clip: text; /* For Safari and older Chrome engines */
+    background-clip: text;         /* The standard version (Add this line!) */
+    
+    -webkit-text-fill-color: transparent; 
+    }
+    header p {
+        font-size: 1.1rem;
+        color: #ffffff;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-top: 5px;
+    }
+
+
+
+    nav{
+        margin-top:20px;
+    }
+
+    nav a{
+        color:white;
+        text-decoration:none;
+        margin:0 15px;
+        font-weight:bold;
+    }
+
+    nav a:hover{
+        color:gold;
+    }
+
+    section{
+        padding:40px 20px;  
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2rem;
+        letter-spacing: 1px;
+        position: relative;
+    }
+    
+    /* Subtle under-line accent for section titles */
+    h2::after {
+        content: '';
+        display: block;
+        width: 25%;
+        height: 3px;
+        background: gold;
+        margin: 10px auto 0 auto;
+        border-radius: 2px;
+    }
+
+    .member-container{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:25px;
+    }
+
+    .card {
+        width: 260px;
+        background: rgba(30, 30, 30, 0.65); /* Semi-transparent glass background */
+        backdrop-filter: blur(10px); /* Blurs content behind the card slightly */
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05); /* Soft premium border edge */
+        border-radius: 16px; /* Smoother corner curves */
+        overflow: hidden;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Ultra smooth ease-out curve */
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    .card:hover {
+        transform: translateY(-12px);
+        border-color: rgba(255, 215, 0, 0.4); /* Border turns soft gold */
+        box-shadow: 0 15px 35px rgba(255, 215, 0, 0.15); /* Gives the card a gold aura glow */
+    }
+
+    .card img {
+        width: 100%;
+        height: 290px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }   
+
+    .card:hover img {
+        transform: scale(1.05);
+    }
+
+    .card h3 {
+        margin-top: 15px;
+        font-size: 1.3rem;
+        color: #ffffff;
+        transition: color 0.3s ease;
+    }
+    
+    .card:hover h3 {
+        color: gold; /* Name turns gold when card is highlighted */
+    }
+
+    .card p {
+        padding: 0 15px 20px 15px;
+        color: #ffffff;
+        font-size: 0.95rem;
+    }   
+
+    footer{
+        text-align:center;
+        padding:20px;
+        background:#1a1a1a;
+    }
+    .card a{
+        color:rgb(255, 255, 255);
+        text-decoration:none;
+        display:block;
+    }
+
+    p {
+        text-align: center;
+    }
+    /* Video container */
+    .video-wrapper {
+    display: inline-block;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    }
+
+    .video-wrapper:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+    }
+
+    .video-wrapper video {
+    display: block;
+    width: 220px;
+    border-radius: 12px;
+    }
+    .album-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+    }
+
+    .album-card {
+    position: relative;
+    
+    width: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease;
+    text-decoration: none;
+    }
+
+    .album-card:hover {
+    transform: scale(1.05);
+    }
+
+    .album-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    }
+
+    .album-label {
+    background: rgba(0,0,0,0.7);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    }
+    p {
+    text-align: center;
+    margin-bottom: 30px;
+    }
+     /* Lightbox Background Overlay */
+    .lightbox {
+    display: none; 
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark backdrop */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 0.3s ease;
+    }
+
+    /* Expanded Image Styles */
+    .lightbox-content {
+    max-width: 85%;
+    max-height: 75%;
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+    object-fit: contain;
+    }
+
+    /* Caption Text under expanded image */
+    #lightbox-caption {
+    margin-top: 15px;
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-align: center;
+    }
+
+    /* Close Button (X) */
+    .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    }
+
+    .close-btn:hover {
+        color: gold;
+    }
+
+    /* Smooth Pointer feedback on clickable cards */
+    .album-grid .card {
+        cursor: pointer;
+    }
+    /* Container for top controls */
+    .lightbox-controls {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        display: flex;
+        gap: 15px;
+        z-index: 1010;
+    }
+
+    /* Style for Zoom and Download Buttons */
+    .lightbox-controls button, 
+    .lightbox-controls a {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+
+    .lightbox-controls button:hover, 
+    .lightbox-controls a:hover {
+        background: gold;
+        color: black;
+        border-color: gold;
+    }
+
+    /* Image wrapper to handle overflow scrolling when zoomed */
+    .lightbox-img-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: auto; /* Adds scrollbars if image gets larger than screen */
+        padding: 40px;
+    }
+
+    /* Base style for the interactive image */
+    .lightbox-content {
+        max-width: 85%;
+        max-height: 75%;
+        border-radius: 8px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+        object-fit: contain;
+        transition: transform 0.3s ease, max-width 0.3s ease, max-height 0.3s ease;
+    }
+
+    /* Zoomed-in state trigger */
+    .lightbox-content.zoomed {
+        transform: scale(1.5); /* Scales image size up by 50% */
+        max-width: 95%;
+        max-height: 95%;
+        cursor: zoom-out;
+    }
+    /* Gives video previews inside the lightbox the exact same layout boundaries as photos */
+    #lightbox-video {
+        background: #000; /* Keeps a clean black backdrop while movie files buffer */
+        max-width: 85%;
+        max-height: 75%;
+        border-radius: 8px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+        outline: none;
+    }
+    .grid-video-thumb {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+    }
+    html {
+        scroll-behavior: smooth;
+}
+/* Base resting position (Deeply hidden off-screen to the right) */
+.slide-in-mascot {
+    position: fixed;
+    bottom: -10px; /* Anchors it nicely to the bottom right corner */
+    right: -160px; /* Tucked deep off-screen so it's fully invisible at first */
+    width: 160px;
+    height: auto;
+    z-index: 99;
+    border-radius: 12px 0 0 0; /* Only curve the top-left corner since the others touch the screen edge */
+    overflow: hidden;
+    /* CHANGES FOR THE PEEK EFFECT: Slower timing and a creeping ease curve */
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1); 
+    pointer-events: none;
+}
+
+/* Image containment rules */
+.slide-in-mascot img {
+    width: 200%;
+    height: auto;
+    display: block;
+}
+
+/* The active class triggered by JavaScript to slide it onto the viewport */
+.slide-in-mascot.show {
+    /* Only slides out by 80px, leaving the back half safely hidden off-screen! */
+    transform: translateX(-150px); 
+}
+/* Add this class modification right under your .slide-in-mascot.show */
+.slide-in-mascot.show img {
+    animation: slowPeekBob 3s ease-in-out infinite alternate;
+}
+
+/* Gentle breathing/bobbing animation */
+@keyframes slowPeekBob {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-5px) rotate(-1deg); /* Slightly lifts and tilts its head */
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+/* Base resting position (Deeply hidden off-screen to the LEFT) */
+.slide-in-mascot-left {
+    position: fixed;
+    bottom: -10px; 
+    left: -400px; /* Hidden completely off-screen to the left */
+    width: 300px;
+    height: auto;
+    z-index: 99;
+    border-radius: 0 12px 0 0; /* Curves the top-right corner since the left touches the screen edge */
+    overflow: hidden;
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1); 
+    pointer-events: none;
+}
+
+.slide-in-mascot-left img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* The Active State: Slides RIGHT onto the viewport */
+.slide-in-mascot-left.show {
+    /* POSITIVE VALUE: Moves 80px to the right, showing exactly half the image */
+    transform: translateX(250px); 
+}
+
+/* Looping bob animation for the left side character */
+.slide-in-mascot-left.show img {
+    animation: slowPeekBobLeft 3s ease-in-out infinite alternate;
+}
+
+@keyframes slowPeekBobLeft {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-6px) rotate(1deg); /* Slight tilt forward into the page */
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+/* PROFILE WRAPPER & CONTAINER */
+.profile-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.profile-layout {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; /* Automatically drops to single column layout on phones */
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+/* LEFT COLUMN: THE HIGHLIGHT PICTURE CARD */
+.profile-left {
+    flex: 1;
+    min-width: 300px;
+    max-width: 360px;
+}
+
+.profile-card {
+    background: rgba(30, 30, 30, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.profile-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.profile-card h2 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.8rem;
+}
+
+.profile-card h2::after {
+    display: none; /* Disables global under-line title decorations for this specific block */
+}
+
+.member-role {
+    color: gold;
+    font-weight: bold;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* RIGHT COLUMN: TEXT STATS WINDOWS */
+.profile-right {
+    flex: 2;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.bio-section, .stats-section {
+    background: rgba(20, 20, 20, 0.5);
+    border-left: 4px solid gold; /* Modern accent side indicator bar */
+    padding: 25px;
+    border-radius: 4px 12px 12px 4px;
+}
+
+.profile-right h3 {
+    color: #fff;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+}
+
+.bio-section p {
+    color: #b0b0b0;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+/* DATA STATS LIST DISPLAY GRID */
+.stats-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stats-list li {
+    font-size: 1.05rem;
+    color: #d4d4d4;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    padding-bottom: 8px;
+}
+
+.stats-list strong {
+    color: gold;
+    margin-right: 8px;
+}
+/* FLOATING CONTROLLER FOR BACKGROUND THEME MUSIC */
+#music-toggle-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px; /* Sits perfectly balanced in the bottom-left corner */
+    z-index: 1000;
+    background: rgba(30, 30, 30, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 18px;
+    border-radius: 30px; /* pill-shaped design */
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#music-toggle-btn:hover {
+    background: gold;
+    color: black;
+    border-color: gold;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.25);
+}
+
+/* Pulse animation effect when theme audio is playing */
+#music-toggle-btn.playing {
+    border-color: rgba(255, 215, 0, 0.6);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
+}
+#welcome-gate {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #0a0a0a;
+    z-index: 9999; /* Covers everything */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+.gate-content h1 {
+    color: white;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+.gate-content button {
+    background: transparent;
+    color: gold;
+    border: 2px solid gold;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+.gate-content button:hover {
+    background: gold;
+    color: black;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
