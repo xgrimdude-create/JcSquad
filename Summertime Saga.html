@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summertime VS Saga Album - JC Squad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>SUMMERTIME VS SAGA Album🥊</h1>
+    <p>GOBLIN VS GOBLIN A FIGHT OF THE CENTURY THAT WILL BE KNOWN FOR YEARS.</p>
+
+    <nav>
+        <a href="practice site.html">← Back to Home</a>
+    </nav>
+</header>
+
+<section id="album-content">
+    <h2>Event Memories Gallery</h2>
+    <p>Click any image or video to view it full screen.</p>
+
+    <div class="album-grid">
+
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Summertime vs the saga poster.jpg" alt="Event Photo">
+            <p style="margin-top: 5px; font-weight: bold;">Poster</p>
+        </div>
+        
+        <div class="card" onclick="openLightbox(this, 'video')">
+            <video src="Jc squad images/Summertime Saga/Prefight.MOV" preload="metadata" class="grid-video-thumb"></video>
+            <p style="margin-top: 5px; font-weight: bold;">Pre Fight 🎥</p>
+        </div>
+        
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Summertime Saga/Coach pic.jpg" preload="metadata" class="grid-video-thumb"></video>
+            <p style="margin-top: 5px; font-weight: bold;">Coach pic</p>
+        </div>
+
+        <div class="card" onclick="openLightbox(this, 'video')">
+            <video src="Jc squad images/Summertime Saga/1st round.MOV" preload="metadata" class="grid-video-thumb"></video>
+            <p style="margin-top: 5px; font-weight: bold;">1st Round 🎥</p>
+        </div>
+
+        <div class="card" onclick="openLightbox(this, 'video')">
+            <video src="Jc squad images/Summertime Saga/Short interview .MOV" preload="metadata" class="grid-video-thumb"></video>
+            <p style="margin-top: 5px; font-weight: bold;">Short interview 🎥</p>
+        </div>
+        
+         <div class="card" onclick="openLightbox(this, 'video')">
+            <video src="Jc squad images/Summertime Saga/Short break.MOV" preload="metadata" class="grid-video-thumb"></video>
+            <p style="margin-top: 5px; font-weight: bold;">Short Break 🎥</p>
+        </div>
+
+        <div class="card" onclick="openLightbox(this, 'video')">
+            <video src="Jc squad images/Summertime Saga/2nd round.MOV" preload="metadata" class="grid-video-thumb"></video>
+            <p style="margin-top: 5px; font-weight: bold;">2nd Round</p>
+        </div>
+
+        <div class="card" onclick="openLightbox(this, 'video')">
+            <video src="Jc squad images/Summertime Saga/Long ahh break.MOV" preload="metadata" class="grid-video-thumb"></video>
+            <p style="margin-top: 5px; font-weight: bold;">Long ahh break   🎥</p>
+        </div>
+
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Summertime Saga/Saga Dmg.JPG" alt="Event Photo">
+            <p style="margin-top: 5px; font-weight: bold;">Saga Damage💢</p>
+        </div>
+
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Summertime Saga/Summertime Dmg.jpg" alt="Event Photo">
+            <p style="margin-top: 5px; font-weight: bold;">Summertime Damage💢</p>
+        </div>
+
+        <div class="card" onclick="openLightbox(this, 'video')">
+            <video src="Jc squad images/Summertime Saga/Sponsorship (1).MOV" preload="metadata" class="grid-video-thumb"></video>
+            <p style="margin-top: 5px; font-weight: bold;">Quick Sponsor</p>
+        </div>
+
+        <div class="card" onclick="openLightbox(this, 'video')">
+            <video src="Jc squad images/Summertime Saga/Winner.MOV" preload="metadata" class="grid-video-thumb"></video>
+            <p style="margin-top: 5px; font-weight: bold;">Results👑</p>
+        </div>
+
+        <div class="card" onclick="openLightbox(this, 'video')">
+            <video src="Jc squad images/Summertime Saga/edit 1 (2).mp4" preload="metadata" class="grid-video-thumb"></video>
+            <p style="margin-top: 5px; font-weight: bold;">Honorable Edits</p>
+        </div>
+        
+        <div class="card" onclick="openLightbox(this, 'video')">
+            <video src="Jc squad images/Summertime Saga/edit 1 (1).mp4" preload="metadata" class="grid-video-thumb"></video>
+            <p style="margin-top: 5px; font-weight: bold;">Honorable Edits</p>
+        </div>
+
+    </div>
+</section>
+
+<div id="lightbox" class="lightbox">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    
+    <div class="lightbox-controls">
+        <button id="zoom-btn" onclick="toggleZoom()">🔍 Zoom In</button>
+        <a id="download-btn" href="#" download="JC_Squad_Memory">💾 Download</a>
+    </div>
+
+    <div class="lightbox-img-wrapper" onclick="closeLightboxOverlay(event)">
+        <img class="lightbox-content" id="lightbox-img" alt="Expanded view">
+        
+        <video class="lightbox-content" id="lightbox-video" controls style="display: none;"></video>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 JC Squad • Making Memories</p>
+</footer>
+
+<script>
+let isZoomed = false;
+
+function openLightbox(element, type) {
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxVideo = document.getElementById("lightbox-video");
+    const downloadBtn = document.getElementById("download-btn");
+    const zoomBtn = document.getElementById("zoom-btn");
+    
+    isZoomed = false;
+    lightboxImg.classList.remove('zoomed');
+    zoomBtn.innerText = "🔍 Zoom In";
+    lightboxVideo.pause();
+
+    if (type === 'image') {
+        lightboxImg.style.display = "block";
+        lightboxVideo.style.display = "none";
+        zoomBtn.style.display = "inline-block";
+        
+        const originalImg = element.querySelector('img').src;
+        lightboxImg.src = originalImg;
+        downloadBtn.href = originalImg;
+        
+    } else if (type === 'video') {
+        lightboxImg.style.display = "none";
+        lightboxVideo.style.display = "block";
+        zoomBtn.style.display = "none";
+        
+        // This targets the video tag directly inside your card structure
+        const originalVideo = element.querySelector('video').src;
+        lightboxVideo.src = originalVideo;
+        downloadBtn.href = originalVideo;
+        
+        lightboxVideo.play();
+    }
+    
+    document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox-video").pause();
+    document.getElementById("lightbox").style.display = "none";
+}
+
+function closeLightboxOverlay(event) {
+    if (event.target.id !== 'lightbox-img' && event.target.id !== 'lightbox-video') {
+        closeLightbox();
+    }
+}
+
+function toggleZoom() {
+    const lightboxImg = document.getElementById("lightbox-img");
+    const zoomBtn = document.getElementById("zoom-btn");
+    
+    isZoomed = !isZoomed;
+    
+    if (isZoomed) {
+        lightboxImg.classList.add('zoomed');
+        zoomBtn.innerText = "🔍 Zoom Out";
+    } else {
+        lightboxImg.classList.remove('zoomed');
+        zoomBtn.innerText = "🔍 Zoom In";
+    }
+}
+</script>
+
+</body>
+</html>

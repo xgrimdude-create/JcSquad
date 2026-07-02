@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Profile: Jairus Abulencia - JC Squad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="welcome-gate">
+    <div class="gate-content">
+        <h1>JC SQUAD ARCHIVES</h1>
+        <p>Entering the profile of Jairus Abulencia...</p>
+        <button onclick="enterSite()">Enter The Skywalker🎸</button>
+    </div>
+</div>
+
+<audio id="bg-music" src="Jc squad images/Music/Island in the sun-Weezer.mp3" loop></audio>
+
+<button id="music-toggle-btn" onclick="toggleMusic()" title="Toggle Background Music">
+    🎵 Play Theme
+</button>
+
+<header>
+    <h1>JAIRUS ABULENCIA</h1>
+    <p>LUKE SKYWALKER</p>
+
+    <nav>
+        <a href="practice site.html">← Back to Home</a>
+    </nav>
+</header>
+
+<main class="profile-container">
+    <div class="profile-layout">
+        
+        <div class="profile-left">
+            <div class="profile-card">
+                <img src="Jc squad images/Jairus Profile/Yagami.jpg" alt="Member Profile Picture">
+                <h2>Jairus Angelo M. Abulencia</h2>
+                <span class="member-role">Luke Skywalker</span>
+            </div>
+        </div>
+
+        <div class="profile-right">
+            <div class="bio-section">
+                <h3>About Me</h3>
+                <p></p>
+            </div>
+
+            <div class="stats-section">
+                <h3>Squad Stats</h3>
+                <ul class="stats-list">
+                    <li><strong>1st Member of JC Squad</strong> </li>
+                    <li><strong>Nicknames:</strong>JC Squad Founder,Renekton Gads,Bisayagami, Lot B Nigger, Ragebaiter, George</li>
+                    <li><strong>Joined Squad:</strong> Established Day One</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<section id="album-content" style="padding-top: 20px;">
+    <h2 style="text-align: center;">Personal Memories Gallery</h2>
+    <p style="text-align: center; color: #888; margin-bottom: 30px;">Click any image to view it full screen.</p>
+
+    <div class="album-grid">
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai (1).jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai (2).jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai (3).jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai (4).jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai (5).jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai (6).jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai (7).jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai (8).jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai (9).jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai (10).jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai (11).jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai (12).jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai (13).jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai (14).jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai (15).jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai (16).jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/jai grad.jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/J_R prom.jpg" alt="Squad Photo">
+        </div>
+        <div class="card" onclick="openLightbox(this, 'image')">
+            <img src="Jc squad images/Jairus Profile/Yagami.jpg" alt="Squad Photo">
+        </div>
+    </div>
+</section>
+
+<div id="lightbox" class="lightbox">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    
+    <div class="lightbox-controls">
+        <button id="zoom-btn" onclick="toggleZoom()">🔍 Zoom In</button>
+        <a id="download-btn" href="#" download="JC_Squad_Memory">💾 Download</a>
+    </div>
+
+    <div class="lightbox-img-wrapper" onclick="closeLightboxOverlay(event)">
+        <img class="lightbox-content" id="lightbox-img" alt="Expanded view">
+        <video class="lightbox-content" id="lightbox-video" controls style="display: none;"></video>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 JC Squad • Making Memories</p>
+</footer>
+
+<script>
+let isZoomed = false;
+
+// --- AUDIO LOGIC ---
+function toggleMusic() {
+    const audio = document.getElementById("bg-music");
+    const btn = document.getElementById("music-toggle-btn");
+    
+    if (audio.paused) {
+        audio.play().then(() => {
+            btn.innerText = "⏸ Pause Theme";
+            btn.classList.add("playing");
+        }).catch(error => {
+            console.log("Playback blocked by browser settings:", error);
+        });
+    } else {
+        audio.pause();
+        btn.innerText = "🎵 Play Theme";
+        btn.classList.remove("playing");
+    }
+}
+
+// Automatically try to start audio if user clicks anywhere on the page body
+document.body.addEventListener('click', function() {
+    const audio = document.getElementById("bg-music");
+    const btn = document.getElementById("music-toggle-btn");
+    // If it hasn't started playing yet and isn't intentionally paused, try starting it quietly
+    if (audio.paused && !btn.classList.contains('playing')) {
+        // Optional: uncomment below if you want it to jumpstart on first general click
+        // toggleMusic();
+    }
+}, { once: true });
+
+
+// --- LIGHTBOX GALLERY LOGIC ---
+function openLightbox(element, type) {
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxVideo = document.getElementById("lightbox-video");
+    const downloadBtn = document.getElementById("download-btn");
+    const zoomBtn = document.getElementById("zoom-btn");
+    const bgAudio = document.getElementById("bg-music");
+    
+    isZoomed = false;
+    lightboxImg.classList.remove('zoomed');
+    zoomBtn.innerText = "🔍 Zoom In";
+    lightboxVideo.pause();
+
+    // Subtle touch: Duck the background music volume if a gallery video starts playing
+    if (type === 'video') {
+        bgAudio.volume = 0.2; 
+    }
+
+    if (type === 'image') {
+        lightboxImg.style.display = "block";
+        lightboxVideo.style.display = "none";
+        zoomBtn.style.display = "inline-block";
+        
+        const originalImg = element.querySelector('img').src;
+        lightboxImg.src = originalImg;
+        downloadBtn.href = originalImg;
+        
+    } else if (type === 'video') {
+        lightboxImg.style.display = "none";
+        lightboxVideo.style.display = "block";
+        zoomBtn.style.display = "none";
+        
+        const originalVideo = element.querySelector('video').src;
+        lightboxVideo.src = originalVideo;
+        downloadBtn.href = originalVideo;
+        
+        lightboxVideo.play();
+    }
+    
+    document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox-video").pause();
+    document.getElementById("lightbox").style.display = "none";
+    
+    // Restore music volume when gallery video is closed
+    document.getElementById("bg-music").volume = 1.0;
+}
+
+function closeLightboxOverlay(event) {
+    if (event.target.id !== 'lightbox-img' && event.target.id !== 'lightbox-video') {
+        closeLightbox();
+    }
+}
+
+function toggleZoom() {
+    const lightboxImg = document.getElementById("lightbox-img");
+    const zoomBtn = document.getElementById("zoom-btn");
+    
+    isZoomed = !isZoomed;
+    
+    if (isZoomed) {
+        lightboxImg.classList.add('zoomed');
+        zoomBtn.innerText = "🔍 Zoom Out";
+    } else {
+        lightboxImg.classList.remove('zoomed');
+        zoomBtn.innerText = "🔍 Zoom In";
+    }
+}
+function enterSite() {
+    const gate = document.getElementById("welcome-gate");
+    const audio = document.getElementById("bg-music");
+    const btn = document.getElementById("music-toggle-btn");
+    
+    // Hide the gate smoothly
+    gate.style.opacity = "0";
+    gate.style.visibility = "hidden";
+    
+    // Play the audio track flawlessly
+    audio.play();
+    if (btn) btn.innerText = "⏸ Pause Theme";
+}
+</script>
+
+</body>
+</html>
